@@ -1,0 +1,48 @@
+
+Task 1: Process Creation Utility
+
+
+Write a Python program that creates N child processes using os.fork(). Each child prints:
+- Its PID
+- Its Parent PID
+- A custom message
+The parent should wait for all children using os.wait().
+
+
+
+Task 2: Command Execution Using exec()
+Modify Task 1 so that each child process executes a Linux command (ls, date, ps, etc.) using os.execvp() or subprocess.run().
+Task 3: Zombie & Orphan Processes
+Zombie: Fork a child and skip wait() in the parent.
+Orphan: Parent exits before the child finishes.
+Use ps -el | grep defunct to identify zombies.
+Task 4: Inspecting Process Info from /proc
+Take a PID as input. Read and print:
+- Process name, state, memory usage from /proc/[pid]/status
+- Executable path from /proc/[pid]/exe
+- Open file descriptors from /proc/[pid]/fd
+Task 5: Process Prioritization
+Create multiple CPU-intensive child processes. Assign different nice() values. Observe and log execution order to show scheduler impact.
+
+Expected Output:
+
+- Child-parent process tree
+- Executed system commands from child processes
+- Verified zombie/orphan states using ps
+- Process details from /proc
+- Impact of priority using different nice values
+
+Complexity Analysis:
+Time Complexity: O(n) for n processes.
+Space Complexity: O(n) due to maintaining process IDs and logs.
+
+Practical Applications:
+- Operating system kernel development
+- Performance tuning via scheduling
+- Real-time and embedded system programming
+- Debugging tools and monitoring systems
+Submission Format:
+- process_management.py: Python script with all tasks.
+- output.txt: Sample output for each task.
+- report.pdf: Summary of objectives, code snapshots, and results.
+- README.md: Instructions to run and requirements.
