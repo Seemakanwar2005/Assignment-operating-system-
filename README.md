@@ -1,4 +1,5 @@
 Operating Systems Lab Assignments
+
 This repository contains all Operating Systems Lab Assignments completed as part of the ENCS351 – Operating Systems Laboratory course. Each assignment covers essential OS concepts, including process management, system calls, memory management, scheduling algorithms, IPC, and system-level simulations.
 
 Repository Structure
@@ -14,7 +15,9 @@ Assignment3_OS.pdf	Report for Assignment 3
 Assignment4_OS.pdf	Report for Assignment 4
 Scheduling.OS.pdf	Report for CPU Scheduling Assignment
 README.md	Documentation of all assignments
+
  Assignment Overview
+ 
  Assignment 1 — Process Management
 Includes:
 
