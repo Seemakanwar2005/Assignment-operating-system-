@@ -1,47 +1,83 @@
-Task 1: Process Creation Utility
+Operating Systems Lab Assignments
+This repository contains all Operating Systems Lab Assignments completed as part of the ENCS351 – Operating Systems Laboratory course. Each assignment covers essential OS concepts, including process management, system calls, memory management, scheduling algorithms, IPC, and system-level simulations.
 
+Repository Structure
+Folder / File	Description
+Assignment1/	Contains Task 1–5 demonstrating process creation using fork(), exec(), zombie & orphan process simulation, /proc inspection, and priority scheduling using nice()
+Assignment2/	Contains system startup simulation using multiprocessing, inter-process logging, process execution simulation, and concurrent system tasks
+Assignment3/	Contains memory management algorithms and priority CPU scheduling including Priority Scheduling, First Fit/Best Fit/Worst Fit memory allocation, MFT & MVT Memory Management Simulation
+Assignment4/	Contains batch processing simulation, system startup simulation, system calls (fork, exec, pipe) & IPC, VM detection script, and shell script to display system information
+Scheduling/	Contains CPU Scheduling Algorithms: FCFS, SJF, SRTF, Round Robin
+ASSIGNMENT1.OS.pdf	Report for Assignment 1
+ASSIGNMENT2.OS.pdf	Report for Assignment 2
+Assignment3_OS.pdf	Report for Assignment 3
+Assignment4_OS.pdf	Report for Assignment 4
+Scheduling.OS.pdf	Report for CPU Scheduling Assignment
+README.md	Documentation of all assignments
+ Assignment Overview
+ Assignment 1 — Process Management
+Includes:
 
-Write a Python program that creates N child processes using os.fork(). Each child prints:
-- Its PID
-- Its Parent PID
-- A custom message
-The parent should wait for all children using os.wait().
+Process creation using os.fork()
+Parent-child relationship
+Zombie process creation
+Orphan process creation
+Executing commands using os.execvp()
+Reading process information using /proc
+Using nice() for priority scheduling
+Run:
 
+cd Assignment1
+python3 task1.py
+python3 task2.py
+python3 task3.py
+python3 task4.py
+python3 task5.py
+Assignment 2 — System Startup & Process Simulation
+Includes:
 
+System Boot Simulation
+Process Creation & Task Execution
+Logging System**
+Run:
 
-Task 2: Command Execution Using exec()
-Modify Task 1 so that each child process executes a Linux command (ls, date, ps, etc.) using os.execvp() or subprocess.run().
-Task 3: Zombie & Orphan Processes
-Zombie: Fork a child and skip wait() in the parent.
-Orphan: Parent exits before the child finishes.
-Use ps -el | grep defunct to identify zombies.
-Task 4: Inspecting Process Info from /proc
-Take a PID as input. Read and print:
-- Process name, state, memory usage from /proc/[pid]/status
-- Executable path from /proc/[pid]/exe
-- Open file descriptors from /proc/[pid]/fd
-Task 5: Process Prioritization
-Create multiple CPU-intensive child processes. Assign different nice() values. Observe and log execution order to show scheduler impact.
+cd Assignment2
+python3 subtask1.py
+python3 subtask2.py
+python3 subtask3.py
+python3 subtask4.py
+Assignment 3 — CPU Scheduling & Memory Management
+Includes:
 
-Expected Output:
+Priority Scheduling
+First Fit, Best Fit, Worst Fit (Memory Allocation)
+MFT (Multiprogramming with Fixed Tasks)
+MVT (Multiprogramming with Variable Tasks)
+Run:
 
-- Child-parent process tree
-- Executed system commands from child processes
-- Verified zombie/orphan states using ps
-- Process details from /proc
-- Impact of priority using different nice values
+python3 task1.py
 
-Complexity Analysis:
-Time Complexity: O(n) for n processes.
-Space Complexity: O(n) due to maintaining process IDs and logs.
+Assignment 4 — System Calls, IPC, VM Detection & Shell Scripting
+Includes:
 
-Practical Applications:
-- Operating system kernel development
-- Performance tuning via scheduling
-- Real-time and embedded system programming
-- Debugging tools and monitoring systems
-Concepts Used:
-	os.fork(), os.getpid(), os.getppid()
-	os._exit(), os.wait(), os.nice()
-	subprocess.run(), os.execvp()
-	Reading /proc/[pid]/status, /exe, and /fd
+Batch Processing Simulation
+System Startup Simulation (Multiprocessing)
+System Calls: fork(), exec(), pipe()
+Inter-Process Communication (IPC)
+Virtual Machine Detection using Python
+System Information Shell Script
+Run:
+
+python3 task1.py
+CPU Scheduling Algorithms — Scheduling Folder
+Includes: This section contains implementations of the four major CPU Scheduling Algorithms used in Operating Systems.
+Each script computes:
+
+Completion Time (CT)
+Turnaround Time (TAT)
+Waiting Time (WT)
+Average TAT and WT
+Gantt Chart order (implicitly through execution order) These programs simulate how real OS schedulers allocate CPU time to processes.
+Run:
+
+python3 fcfs.py
